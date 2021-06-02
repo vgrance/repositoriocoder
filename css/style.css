@@ -1,0 +1,319 @@
+
+ul.horizontal{
+    margin:0;
+    padding:0;
+    }
+
+.titulo{
+    color: rgb(138, 128, 223);
+    text-align: right;
+    font-size: 30px;
+    
+}
+
+.subtitulo{
+    color: rgb(82, 21, 139);
+    text-align: right;
+    font-size: 24px;    
+
+}
+/* A partir de aca trabajo la barra de navegacion*/
+
+ul{
+    list-style: none;
+  }
+  #horizontal li>a{
+    background-color: rgb(138, 128, 223);
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    justify-content: center;
+    text-decoration: none;
+    min-width: 100px;
+  }
+  #horizontal li>a:hover{
+    color: black;
+    background-color: #ffcf4a;
+  }
+  #horizontal> li{
+    display: inline-block;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: center;
+  }
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: white
+    
+}
+
+
+p{
+    color: rgb(82, 21, 139);
+    text-align: center;
+    font-size: 46px;
+    
+}
+
+ul li{ color: rgb(138, 128, 223);
+
+}
+
+img {
+    flex-direction: column;
+    margin: 10px;
+    padding: 5px;
+    border-color: rgb(138, 128, 223);
+   
+}
+
+.video{
+  margin: 50px;
+  padding-left: 50px;
+  
+}
+.contacto{
+    
+    color:blue;
+    background-color:rgb(138, 128, 223);
+    background:  linear-gradient(to top,rgb(138, 128, 223), #ccc)
+   
+
+}
+
+.pie{
+    color: blueviolet;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.mail{
+    text-align: right;
+
+}
+
+.numeroTelefono{
+    text-align: right;
+    background-position: right;
+}
+
+.video{
+  text-align: center;
+}
+
+
+
+.textoPresentacion{ 
+
+  border:rgb(138, 128, 223) 3px solid;
+  float:none;
+  background-color: rgb(238, 231, 231);;
+  flex-direction: column;
+  margin: 50px 30px 50px 30px;
+  padding-bottom: 80px;  
+  position: relative;
+  animation-duration: 7s;
+  animation-name: aparecer;
+}
+ /*para hacer la animación con texto*/
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.redes{
+  float: right;
+  padding-left: 500px;
+
+}
+
+.flex{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.principal{
+  display: flex;
+  flex-direction: row;
+  margin-left: 15px;
+
+}
+
+/* css para formulario */
+
+.formulario {
+  border:rgb(138, 128, 223) 3px solid;
+  margin: 10px;
+  padding: 10px;
+  }
+
+  /* css para servicios */
+
+/* CONTAINER */
+
+.container {
+    /*de esta manera centro*/ 
+    width: 100%;
+    max-width: 1000px;
+    margin: 25px auto;
+    /*hasta aca*/
+    display: grid;
+    /*añade un espaciado entre los contenedores*/
+    gap: 25px;
+    /*creo las 5 columnas*/
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.container>.header, .container>.content, .container>.sidebar, .container>.footer, .container>div {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #000000;
+}
+/*para el header dentro del container,
+ para el footer dentro del container*/
+.container>.header, .container>.ciclo {
+    grid-column: 1/-1;
+    background-color: #ffcf4a;
+    color: #ffffff;
+}
+
+.container>.content {
+    /*el content abarca 3 columnas*/
+    grid-column: span 3;
+    grid-row: span 4;
+}
+
+.content>.article {
+    background:rgb(138, 128, 223);
+    padding: 20px;
+    margin-top: 5px;
+    color: #dfe6e9
+}
+
+.content .article h1,
+.content .article p {
+    padding: 50px;
+    margin: 10px;
+}
+/*entrando */
+.container>.sidebar {
+    grid-column: span 2;
+    grid-row: span 4;
+    background: #ffcf4a;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*estilo para imagen */
+.container .sidebar img {
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+    padding: 3px;
+    align-content: center;
+}
+
+.container>.actividad {
+    background:rgb(83, 177, 83);
+    color: #ffffff;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.container>.actividad:hover {
+    cursor: pointer;
+    color: #984eec;
+    background: #ffffff;
+}
+
+.texto {
+    font-size: 20px;
+    align-content: center;
+
+}
+/* MEDIA QUERIES */
+/*aplicando responsive para pantallas de 768px*/
+@media screen and (max-width: 768px) {
+    .header {
+        text-align: center;
+    }
+    .container .content {
+        grid-column: 1 / -1;
+    }
+    .container .sidebar {
+        grid-column: 1 / 6;
+    }
+
+    .container .related-post {
+        grid-column: 1/-1;
+    }
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+    body {
+      background-color: #ffffff; 
+    }
+  }
+  /* Tablet Styles */
+  @media only screen and (min-width: 401px) and (max-width: 960px) {
+    body {
+      background-color: #ffffff; 
+    }
+  }
+  /* Desktop Styles */
+  @media only screen and (min-width: 961px) {
+    body {
+      background-color: #ffffff; 
+    }
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
+
+body {
+  color: rgb(14, 13, 13);
+  font-family: 'Manrope', sans-serif
+}
+
+.mt-100 {
+  margin-top: 100px
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 450px;
+  word-wrap: break-word;
+  background-color: rgb(12, 11, 11);
+  background-clip: border-box;
+  border-radius: 1px;
+  -moz-box-shadow: 0px 0px 5px 0px rgba(212, 182, 212, 1)
+}
+
+.card-header {
+  background-color: #fff
+}
+
+.card-body h4 {
+  color: #545b62
+}
+
+.acordion-item{
+  flex-direction: row;
+  align-content: center;
+
+}
